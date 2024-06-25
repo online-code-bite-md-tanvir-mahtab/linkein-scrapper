@@ -1,6 +1,5 @@
 # from playwright.sync_api import sync_playwright, Playwright
 from time import sleep
-import pandas as pd
 import requests
 from flask import Flask, render_template, request, redirect
 
@@ -8,7 +7,6 @@ from flask import Flask, render_template, request, redirect
 people_names = []
 people_profile_url = []
 people_job_company_names = []
-datas = pd.DataFrame()
 
 
 def parse_peoples(name, job_title,include_related_titles,exclude_job_titles,seniority,skills,years_in_current_role,total_years_experience,location,company,exclude_companies,company_size,min_revenue,max_revenue):
