@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="">
+    <!-- ... (Your Navigation Bar remains the same) ... -->
+
+    <div class="container p-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Search Filter -->
+            <div class="bg-white rounded-md shadow-md max-w-80 md:col-span-1"> 
+                <!-- ... (Your Filter Form) ... -->
+                <h2 class="text-xl font-bold text-gray-800 mb-2">Name</h2>
+                <input type="text" class="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500" placeholder="smith">
+
+                <h2 class="text-xl font-bold text-gray-800 mt-4 mb-2">Job title</h2>
+                <div class="flex items-center">
+                    <select class="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500">
+                        <option value="Current">Current</option>
+                    </select>
+                    <span class="ml-2 text-gray-600">?</span>
+                </div>
+
+                <h2 class="text-xl font-bold text-gray-800 mt-4 mb-2">Job title</h2>
+                <input type="text" class="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500" placeholder="Enter job title or boolean query">
+
+                <div class="mt-2">
+                    <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 focus:ring-blue-500">
+                    <label for="include_related_titles" class="ml-2 text-gray-600">Include related titles</label>
+                </div>
+
+                <div class="mt-2">
+                    <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 focus:ring-blue-500">
+                    <label for="exclude_job_titles" class="ml-2 text-gray-600">Exclude job titles</label>
+                </div>
+
+                <h2 class="text-xl font-bold text-gray-800 mt-4 mb-2">Seniority</h2>
+                <div class="flex items-center">
+                    <select class="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500">
+                        <option value="Current">Current</option>
+                    </select>
+                </div>
+
+                <h2 class="text-xl font-bold text-gray-800 mt-4 mb-2">Select seniority level</h2>
+
+                <h2 class="text-xl font-bold text-gray-800 mt-4 mb-2">Skills</h2>
+                <input type="text" class="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500" placeholder="e.g., PHP">
+
+                <h2 class="text-xl font-bold text-gray-800 mt-4 mb-2">Years in current role</h2>
+                <div class="flex items-center">
+                    <select class="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500">
+                        <option value="Select experience range">Select experience range</option>
+                    </select>
+                </div>
+
+                <h2 class="text-xl font-bold text-gray-800 mt-4 mb-2">Total years of experience</h2>
+                <div class="flex items-center">
+                    <select class="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500">
+                        <option value="Select experience range">Select experience range</option>
+                    </select>
+                </div>
+
+                <h2 class="text-xl font-bold text-gray-800 mt-4 mb-2">Location</h2>
+                <span class="ml-2 text-gray-600">?</span>
+                <input type="text" class="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500" placeholder="e.g., Sydney, Australia">
+
+                <h2 class="text-xl font-bold text-gray-800 mt-4 mb-2">Select mile radius</h2>
+
+                <h2 class="text-xl font-bold text-gray-800 mt-4 mb-2">Company</h2>
+                <div class="flex items-center">
+                    <select class="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500">
+                        <option value="Current">Current</option>
+                    </select>
+                </div>
+
+                <input type="text" class="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500" placeholder="e.g., Contacut">
+
+                <div class="mt-2">
+                    <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 focus:ring-blue-500">
+                    <label for="exclude_companies" class="ml-2 text-gray-600">Exclude companies</label>
+                </div>
+
+                <h2 class="text-xl font-bold text-gray-800 mt-4 mb-2">Company size</h2>
+                <div class="flex items-center">
+                    <select class="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500">
+                        <option value="Select company size">Select company size</option>
+                    </select>
+                </div>
+
+                <h2 class="text-xl font-bold text-gray-800 mt-4 mb-2">Revenue</h2>
+                <div class="flex items-center space-x-2">
+                    <input type="number" class="w-24 px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500" placeholder="$Min">
+                    <span class="text-gray-600">to</span>
+                    <input type="number" class="w-24 px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500" placeholder="$Max">
+                </div>
+
+                <div class="mt-4">
+                    <button class="px-4 py-2 rounded-md bg-blue-500 text-white hover:bg-blue-600">
+                        <svg class="h-4 w-4 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                        Search
+                    </button>
+                </div>
+            </div>
+
+            <!-- People List -->
+            <div class="bg-white rounded-md shadow-md p-4 md:col-span-1"> 
+                <h2 class="text-xl font-bold text-gray-800 mb-2">People</h2>
+                <ul class="list-disc">
+                    {% for person in people %}
+                    <li class="py-2">
+                        <!-- ... (Your Person Info) ... -->
+                        <div class="flex items-center mb-2">
+                            <img class="person-image w-16 h-16 rounded-full mr-4" src="{{ person.image_url }}"
+                                alt="{{ person.name }}">
+                            <div class="person-details">
+                                <h3 class="person-name text-lg font-semibold">{{ person.name }}</h3>
+                                <p class="person-location text-gray-600">{{ person.location }}</p>
+                            </div>
+                        </div>
+                        <div class="person-details text-gray-700 mb-4">
+                            <p>{{ person.job_title }}</p>
+                            <p>{{ person.company }}</p>
+                            <p>{{ person.experience }}</p>
+                        </div>
+                        <div class="person-actions flex space-x-2 mb-4">
+                            <button
+                                class="action-button px-3 py-1 rounded-md bg-blue-500 text-white hover:bg-blue-600">View
+                                email</button>
+                            <button
+                                class="action-button px-3 py-1 rounded-md bg-blue-500 text-white hover:bg-blue-600">Find
+                                phone</button>
+                            <button
+                                class="action-button px-3 py-1 rounded-md bg-blue-500 text-white hover:bg-blue-600">Write
+                                personalized message</button>
+                        </div>
+                        <div class="social-links flex space-x-2">
+                            <a href="#" class="social-icon text-blue-600 hover:text-blue-800"><i
+                                    class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-icon text-blue-600 hover:text-blue-800"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon text-blue-600 hover:text-blue-800"><i
+                                    class="fab fa-facebook"></i></a>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
