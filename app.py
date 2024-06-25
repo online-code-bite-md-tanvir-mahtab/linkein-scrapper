@@ -60,6 +60,3 @@ def home():
         return render_template('index.html', people=profiles)
     else:
         return render_template('index.html', people=profiles)
-
-if __name__ == '__main__':
-    app.run(debug=True)
