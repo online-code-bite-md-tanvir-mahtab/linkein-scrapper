@@ -9,13 +9,13 @@ from flask import Flask, jsonify, render_template, request, redirect
 people_names = []
 people_profile_url = []
 people_job_company_names = []
-
+token = '6WHUdgndzUt4P82WDcQ90bvH'
 
 def parse_peoples(name, job_title,include_related_titles,exclude_job_titles,seniority,skills,years_in_current_role,total_years_experience,location,company,exclude_companies,company_size,min_revenue,max_revenue):
     url = "https://api.contactout.com/v1/people/search"
     headers = {
         
-        'token': 'lC3hMrT7kKHZGrND76nwF8zI'
+        'token': token
     }
     payload = {
         "name": name,
@@ -107,7 +107,7 @@ def index():
         headers = {
             'Content-Type': 'application/json',
             'Authorization': 'basic',
-            'token': 'lC3hMrT7kKHZGrND76nwF8zI'
+            'token': token
         }
 
         response = requests.post("https://api.contactout.com/v1/company/search", headers=headers, json=data)
