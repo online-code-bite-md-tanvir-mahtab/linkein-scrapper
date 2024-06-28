@@ -3,152 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Profile Search Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="static/styles.css">
 </head>
-<body class="">
-    <!-- ... (Your Navigation Bar remains the same) ... -->
-
-    <div class="container p-4">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <!-- Search Filter -->
-            <div class="bg-white rounded-md shadow-md max-w-80 md:col-span-1"> 
-                <!-- ... (Your Filter Form) ... -->
-                <h2 class="text-xl font-bold text-gray-800 mb-2">Name</h2>
-                <input type="text" class="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500" placeholder="smith">
-
-                <h2 class="text-xl font-bold text-gray-800 mt-4 mb-2">Job title</h2>
-                <div class="flex items-center">
-                    <select class="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500">
-                        <option value="Current">Current</option>
-                    </select>
-                    <span class="ml-2 text-gray-600">?</span>
+<body>
+    <div style="height: 100%;">
+        <nav class="header-container">
+            <div class="header-left" style="color: rgb(1, 1, 206);">
+                <ul>
+                    <li>People</li>
+                    <li>Companies</li>
+                </ul>
+                <button style="border: none; background:none; color: rgb(3, 3, 193);">Clear All</button>
+            </div>
+            <div class="header-right">
+                <div class="top-bar">
+                    <input type="checkbox" class="top-item">
+                    <select style="border: none;" name="select" class="top-item"></select>
+                    <button style="border: none; background:none;" class="top-item">0 Selected</button>
+                    <button class="save-button top-item"><span><i class="fa-solid fa-plus"></i></span> Save</button>
+                    <button class="top-item" style="border-radius: 5px; border:1px solid rgb(211, 210, 210); background: none; padding: 3px 10px;"><span><i class="fa-regular fa-paper-plane"></i></span> Email Campaign</button>
+                    <button class="top-item" style="border-radius: 5px; border:1px solid gray; background: none; padding: 3px 10px;"><span><i class="fa-solid fa-download"></i></span> Export</button>
                 </div>
-
-                <h2 class="text-xl font-bold text-gray-800 mt-4 mb-2">Job title</h2>
-                <input type="text" class="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500" placeholder="Enter job title or boolean query">
-
-                <div class="mt-2">
-                    <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 focus:ring-blue-500">
-                    <label for="include_related_titles" class="ml-2 text-gray-600">Include related titles</label>
-                </div>
-
-                <div class="mt-2">
-                    <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 focus:ring-blue-500">
-                    <label for="exclude_job_titles" class="ml-2 text-gray-600">Exclude job titles</label>
-                </div>
-
-                <h2 class="text-xl font-bold text-gray-800 mt-4 mb-2">Seniority</h2>
-                <div class="flex items-center">
-                    <select class="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500">
-                        <option value="Current">Current</option>
-                    </select>
-                </div>
-
-                <h2 class="text-xl font-bold text-gray-800 mt-4 mb-2">Select seniority level</h2>
-
-                <h2 class="text-xl font-bold text-gray-800 mt-4 mb-2">Skills</h2>
-                <input type="text" class="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500" placeholder="e.g., PHP">
-
-                <h2 class="text-xl font-bold text-gray-800 mt-4 mb-2">Years in current role</h2>
-                <div class="flex items-center">
-                    <select class="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500">
-                        <option value="Select experience range">Select experience range</option>
-                    </select>
-                </div>
-
-                <h2 class="text-xl font-bold text-gray-800 mt-4 mb-2">Total years of experience</h2>
-                <div class="flex items-center">
-                    <select class="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500">
-                        <option value="Select experience range">Select experience range</option>
-                    </select>
-                </div>
-
-                <h2 class="text-xl font-bold text-gray-800 mt-4 mb-2">Location</h2>
-                <span class="ml-2 text-gray-600">?</span>
-                <input type="text" class="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500" placeholder="e.g., Sydney, Australia">
-
-                <h2 class="text-xl font-bold text-gray-800 mt-4 mb-2">Select mile radius</h2>
-
-                <h2 class="text-xl font-bold text-gray-800 mt-4 mb-2">Company</h2>
-                <div class="flex items-center">
-                    <select class="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500">
-                        <option value="Current">Current</option>
-                    </select>
-                </div>
-
-                <input type="text" class="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500" placeholder="e.g., Contacut">
-
-                <div class="mt-2">
-                    <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600 focus:ring-blue-500">
-                    <label for="exclude_companies" class="ml-2 text-gray-600">Exclude companies</label>
-                </div>
-
-                <h2 class="text-xl font-bold text-gray-800 mt-4 mb-2">Company size</h2>
-                <div class="flex items-center">
-                    <select class="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500">
-                        <option value="Select company size">Select company size</option>
-                    </select>
-                </div>
-
-                <h2 class="text-xl font-bold text-gray-800 mt-4 mb-2">Revenue</h2>
-                <div class="flex items-center space-x-2">
-                    <input type="number" class="w-24 px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500" placeholder="$Min">
-                    <span class="text-gray-600">to</span>
-                    <input type="number" class="w-24 px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500" placeholder="$Max">
-                </div>
-
-                <div class="mt-4">
-                    <button class="px-4 py-2 rounded-md bg-blue-500 text-white hover:bg-blue-600">
-                        <svg class="h-4 w-4 inline-block mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg>
-                        Search
-                    </button>
+                <div style="display: flex; align-items: center;">
+                    <span>1 - 24 of 10,000 profiles</span>
+                    <div class="pagination-button">
+                        <span style="border-right: none;"><i class="fa-solid fa-arrow-left"></i></span>
+                        <span style="border: 1px solid #ccc;">1 <span><i class="fa-solid fa-angle-down"></i></span></span>
+                        <span style="border-left: none;"><i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
                 </div>
             </div>
-
-            <!-- People List -->
-            <div class="bg-white rounded-md shadow-md p-4 md:col-span-1"> 
-                <h2 class="text-xl font-bold text-gray-800 mb-2">People</h2>
-                <ul class="list-disc">
-                    {% for person in people %}
-                    <li class="py-2">
-                        <!-- ... (Your Person Info) ... -->
-                        <div class="flex items-center mb-2">
-                            <img class="person-image w-16 h-16 rounded-full mr-4" src="{{ person.image_url }}"
-                                alt="{{ person.name }}">
-                            <div class="person-details">
-                                <h3 class="person-name text-lg font-semibold">{{ person.name }}</h3>
-                                <p class="person-location text-gray-600">{{ person.location }}</p>
+        </nav>
+        <div class="container">
+            <form action="/" method="POST">
+            <div class="sidebar" style="height: 100vh;">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Filters</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" class="form-control" id="company" placeholder="e.g. ContactOut">
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <input type="text" class="form-control" id="location" placeholder="e.g. Sydney, Australia">
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="hqLocationOnly">
+                            <label class="form-check-label" for="hqLocationOnly">HQ Location only</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="industry">Industry</label>
+                            <select class="form-control" id="industry">
+                                <option value="">Select industry</option>
+                                <option value="e-learning">E-learning</option>
+                                <option value="Non-profit Organization Management">Non-profit Organization Management</option>
+                                <option value="Telecommunications">Telecommunications</option>
+                                <option value="Banking">Banking</option>
+                                <option value="Apparel & Fashion">Apparel & Fashion</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="companySize">Company size</label>
+                            <select class="form-control" id="companySize">
+                                <option value="">Select company size</option>
+                                <option value="1001-5000">1,001-5,000 employees</option>
+                                <option value="10000+">10,000+ employees</option>
+                                <option value="5001-10000">5,001-10,000 employees</option>
+                                <option value="1001-5000">1,001-5,000 employees</option>
+                                <option value="10000+">10,000+ employees</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="revenue">Revenue</label>
+                            <div class="row">
+                                <div class="col-6">
+                                    <input type="number" class="form-control" id="revenueMin" placeholder="$Min">
+                                </div>
+                                <div class="col-6">
+                                    <input type="number" class="form-control" id="revenueMax" placeholder="$Max">
+                                </div>
                             </div>
                         </div>
-                        <div class="person-details text-gray-700 mb-4">
-                            <p>{{ person.job_title }}</p>
-                            <p>{{ person.company }}</p>
-                            <p>{{ person.experience }}</p>
+                        <div class="form-group">
+                            <label for="technologiesUsed">Technologies used</label>
+                            <input type="text" class="form-control" id="technologiesUsed" placeholder="e.g. Salesforce">
                         </div>
-                        <div class="person-actions flex space-x-2 mb-4">
-                            <button
-                                class="action-button px-3 py-1 rounded-md bg-blue-500 text-white hover:bg-blue-600">View
-                                email</button>
-                            <button
-                                class="action-button px-3 py-1 rounded-md bg-blue-500 text-white hover:bg-blue-600">Find
-                                phone</button>
-                            <button
-                                class="action-button px-3 py-1 rounded-md bg-blue-500 text-white hover:bg-blue-600">Write
-                                personalized message</button>
+                        <div class="form-group">
+                            <label for="yearFounded">Year founded</label>
+                            <div class="row">
+                                <div class="col-6">
+                                    <input type="number" class="form-control" id="yearFoundedMin" placeholder="Year">
+                                </div>
+                                <div class="col-6">
+                                    <input type="number" class="form-control" id="yearFoundedMax" placeholder="Year">
+                                </div>
+                            </div>
                         </div>
-                        <div class="social-links flex space-x-2">
-                            <a href="#" class="social-icon text-blue-600 hover:text-blue-800"><i
-                                    class="fab fa-linkedin"></i></a>
-                            <a href="#" class="social-icon text-blue-600 hover:text-blue-800"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-icon text-blue-600 hover:text-blue-800"><i
-                                    class="fab fa-facebook"></i></a>
+                        <div class="form-group">
+                            <label for="domain">Domain</label>
+                            <input type="text" class="form-control" id="domain" placeholder="e.g. www.contactaout.com">
                         </div>
-                    </li>
+                        <div class="form-group">
+                            <label for="keyword">Keyword</label>
+                            <input type="text" class="form-control" id="keyword" placeholder="e.g. Cloud, AWS">
+                        </div>
+                        <button class="btn btn-primary btn-block" id="searchButton">Search</button>
+                    </div>
+                </div>
+                <div style="border-top: 1px solid rgb(192, 189, 189); padding-top: 25px;">
+                    <button class="search-button">Search</button>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin: 25px;">
+                        <button style="border: none; background: none;"><span><i class="fa-regular fa-bookmark"></i></span> Saved Search <span><i class="fa-solid fa-chevron-down"></i></span></button>
+                        <button style="background: none; border-radius:8px; border: 1px solid rgb(199, 197, 197);">Save Search</button>
+                    </div>
+                </div>
+            </form>
+            </div>
+            <div class="main-content">
+                <div class="profiles">
+                    {% for person_url, profile in people.items() %}
+                    <div class="profile">
+                        <div>
+                            <div class="profile-header">
+                                <input type="checkbox">
+                                <div class="profile-initials">{{ profile.get('initials', 'XX') }}</div>
+                                <h3>{{ profile.get('full_name', 'No Name') }} | <span><i class="fa-brands fa-linkedin"></i></span> <span><i class="fa-brands fa-github"></i></span> <span><i class="fa-brands fa-twitter"></i></span> | <span>{{ profile.get('location', 'Location not available') }}</span></h3>
+                            </div>
+                            <div class="details">
+                                <p><span><i class="fa-solid fa-briefcase"></i></span> {{ profile.get('title', 'Title not available') }} at <span style="color: rgb(2, 2, 232);">{{ profile.get('company', {}).get('name', 'Company not available') }}</span> in {{ profile.get('experience', 'Experience not available') }}</p>
+                                <p><span><i class="fa-solid fa-graduation-cap"></i></span> {{ profile.get('education', 'Education not available') }}</p>
+                                <div class="more-container">
+                                    <span class="more">...more <i class="fa-solid fa-angle-down"></i></span>
+                                    <div class="dropdown-content">
+                                        <!-- Content for the dropdown goes here -->
+                                        <p><span><i class="fa-solid fa-cogs"></i></span> 
+                                        {% if profile.get('skills') %}
+                                            {{ profile.get('skills')|join(', ') }}
+                                        {% else %}
+                                            Skill not available
+                                        {% endif %}
+                                        </p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="informations">
+                            <div class="info">
+                                <p><span><i class="fa-regular fa-envelope"></i></span>{{ profile.contact_info.personal_emails|join(', ') }} <span style="color: green; font-size: small;"><i class="fa-solid fa-circle"></i></span></p>
+                                <p><span><i class="fa-solid fa-phone"></i></span> 019*******</p>
+                                <button><span><i class="fa-solid fa-wand-magic-sparkles"></i></span> AI Write Personalized Message</button>
+                            </div>
+                            <div class="profile-actions">
+                                <button>View Email</button>
+                                <button>Find Phone</button>
+                            </div>
+                        </div>
+                    </div>
                     {% endfor %}
-                </ul>
+                </div>
             </div>
         </div>
     </div>

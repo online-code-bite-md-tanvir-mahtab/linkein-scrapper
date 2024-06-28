@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Search Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='company.css') }}">
+</head>
+<body>
+    <div style="height: 100%;">
+        <nav class="header-container">
+            <div class="header-left" style="color: rgb(1, 1, 206);">
+                <ul>
+                    <li><a href="/">People</a></li>
+                    <li><a href="/company">Companies</a></li>
+
+                </ul>
+                <button style="border: none; background:none; color: rgb(3, 3, 193);">Clear All</button>
+            </div>
+            <div class="header-right">
+                <div class="top-bar">
+                    <input type="checkbox" class="top-item">
+                    <select style="border: none;" name="select" class="top-item"></select>
+                    <button style="border: none; background:none;" class="top-item">0 Selected</button>
+                    <button class="save-button top-item"><span><i class="fa-solid fa-plus"></i></span> Save</button>
+                    <button class="top-item" style="border-radius: 5px; border:1px solid rgb(211, 210, 210); background: none; padding: 3px 10px;"><span><i class="fa-regular fa-paper-plane"></i></span> Email Campaign</button>
+                    <button class="top-item" style="border-radius: 5px; border:1px solid gray; background: none; padding: 3px 10px;"><span><i class="fa-solid fa-download"></i></span> Export</button>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <span>1 - 24 of 10,000 profiles</span>
+                    <div class="pagination-button">
+                        <span style="border-right: none;"><i class="fa-solid fa-arrow-left"></i></span>
+                        <span style="border: 1px solid #ccc;">1 <span><i class="fa-solid fa-angle-down"></i></span></span>
+                        <span style="border-left: none;"><i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <form action="/company" method="POST">
+                <div class="sidebar" style="height: 100vh;">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Filters</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="company">Company</label>
+                                <input type="text" class="form-control" id="company" name="company" placeholder="e.g. ContactOut">
+                            </div>
+                            <div class="form-group">
+                                <label for="location">Location</label>
+                                <input type="text" class="form-control" id="location" name="location" placeholder="e.g. Sydney, Australia">
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="hqLocationOnly" name="hqLocationOnly">
+                                <label class="form-check-label" for="hqLocationOnly">HQ Location only</label>
+                            </div>
+                            <div class="form-group">
+                                <label for="industry">Industry</label>
+                                <select class="form-control" id="industry" name="industry">
+                                    <option value="">Select industry</option>
+                                    <option value="e-learning">E-learning</option>
+                                    <option value="Non-profit Organization Management">Non-profit Organization Management</option>
+                                    <option value="Telecommunications">Telecommunications</option>
+                                    <option value="Banking">Banking</option>
+                                    <option value="Apparel & Fashion">Apparel & Fashion</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="companySize">Company size</label>
+                                <select class="form-control" id="companySize" name="companySize">
+                                    <option value="">Select company size</option>
+                                    <option value="1001-5000">1,001-5,000 employees</option>
+                                    <option value="10000+">10,000+ employees</option>
+                                    <option value="5001-10000">5,001-10,000 employees</option>
+                                    <option value="1001-5000">1,001-5,000 employees</option>
+                                    <option value="10000+">10,000+ employees</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="revenue">Revenue</label>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <input type="number" class="form-control" id="revenueMin" name="revenueMin" placeholder="$Min">
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="number" class="form-control" id="revenueMax" name="revenueMax" placeholder="$Max">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="technologiesUsed">Technologies used</label>
+                                <input type="text" class="form-control" id="technologiesUsed" name="technologiesUsed" placeholder="e.g. Salesforce">
+                            </div>
+                            <div class="form-group">
+                                <label for="yearFounded">Year founded</label>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <input type="number" class="form-control" id="yearFoundedMin" name="yearFoundedMin" placeholder="Year">
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="number" class="form-control" id="yearFoundedMax" name="yearFoundedMax" placeholder="Year">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="domain">Domain</label>
+                                <input type="text" class="form-control" id="domain" name="domain" placeholder="e.g. www.contactaout.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="keyword">Keyword</label>
+                                <input type="text" class="form-control" id="keyword" name="keyword" placeholder="e.g. Cloud, AWS">
+                            </div>
+                            <button class="btn btn-primary btn-block" id="searchButton">Search</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </form>
+            {% if results %}
+            <div class="results">
+                <div class="main-content">
+                    <div class="profiles">
+                        {% for compani in results %}
+                        <div class="profile">
+                            <div>
+                                <div class="profile-header">
+                                    <input type="checkbox">
+                                    <h3><img src="{{ compani['logo_url'] }}" alt="Company Logo" style="height: 60px; width: auto;"> | <span><i class="fa-brands fa-linkedin"></i></span> <span><i class="fa-brands fa-github"></i></span> <span><i class="fa-brands fa-twitter"></i></span></h3>
+
+                                </div>
+                                <div class="details">
+                                    <p><span><i class="fa-brands fa-building"></i></span> {{ compani["name"] }} at <span style="color: rgb(2, 2, 232);"></span></p>
+                                    <p><span><i class="fa-solid fa-file-alt"></i></span> {{ compani["overview"] }}</p>
+                                </div>
+                                
+                            </div>
+                            <div class="informations">
+                                <div class="info">
+                                    <ul>
+                                        <li>
+                                            <p><span><i class="fa-regular fa-building"></i></span> {{ compani["type"] }}</p>
+                                        </li>
+                                        <li>
+                                            <p><span><i class="fa-solid fa-users"></i></span> {{ compani["size"] }}</p>
+                                        </li>
+                                        <li>
+                                            <p><span><i class="fa-solid fa-money-bill-alt"></i></span> {{ compani["revenue"] }}$</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
